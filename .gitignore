@@ -1,0 +1,11 @@
+# Compiled programs and build outputs
+build/
+*.o
+*.obj
+*.exe
+*.out
+/map_coloring
+
+# Editor and operating system files
+.vscode/
+.DS_Store
