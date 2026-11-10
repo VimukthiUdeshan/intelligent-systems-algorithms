@@ -1,90 +1,122 @@
 # Intelligent Systems Algorithms
 
-A growing collection of AI algorithms implemented in modern C++, with a focus on understanding the ideas, writing clear code, and improving performance over time.
+A growing collection of Artificial Intelligence algorithms implemented in **modern C++**. This repository explores fundamental AI concepts through practical implementations, with an emphasis on understanding algorithms, problem-solving techniques, and computational efficiency.
 
-## Implemented algorithms
+The implementations are organized by topic, making it easier to explore different approaches to intelligent problem-solving.
 
-| Topic | Problem | Technique | Status |
-| --- | --- | --- | --- |
-| Constraint Satisfaction (CSP) | Map coloring | Recursive backtracking | Implemented |
+## Implemented Algorithms
 
-## CSP: Map coloring
+| Area | Problem | Algorithm / Technique | Status |
+|---|---|---|---|
+| Constraint Satisfaction | Map Coloring | Recursive Backtracking | Implemented |
+| Game Playing Search | Adversarial Game Tree | Minimax, Alpha-Beta Pruning | Implemented |
 
-The goal is to color a graph using at most four colors without giving adjacent countries the same color.
+## Repository Contents
 
-- **Variables:** Countries (vertices)
-- **Domain:** Yellow, Red, Green, Blue
-- **Constraint:** Neighboring countries must have different colors
-- **Representation:** An undirected graph stored as an adjacency list (`std::vector<std::vector<int>>`)
-- **Solver:** Depth-first recursive backtracking with an `isSafe()` constraint check
+### 1. Constraint Satisfaction Problems (CSP)
 
-### Input format
+**Map Coloring — Recursive Backtracking**
 
-First line: `N M`, where `N` is the number of countries and `M` is the number of borders.
+A constraint satisfaction problem in which neighboring regions must be assigned different colors using a maximum of four available colors.
 
-Next `M` lines: two 1-based country numbers `u v` for each undirected border.
+- Graph representation using an adjacency list.
+- Recursive depth-first search.
+- Constraint checking through backtracking.
 
-### Compile and run (g++)
+**Implementation:** [`src/constraint_satisfaction/map_coloring/`](src/constraint_satisfaction/map_coloring/)
 
-From the repository root:
+**Documentation:** [`Map Coloring README`](src/constraint_satisfaction/map_coloring/README.md)
+
+### 2. Game Playing Search
+
+**Minimax and Alpha-Beta Pruning**
+
+Adversarial search algorithms used in two-player, zero-sum games. The implementation evaluates a complete binary game tree to determine the optimal decision for the maximizing player.
+
+- Recursive Minimax evaluation.
+- MAX and MIN player decision-making.
+- Alpha-Beta Pruning to eliminate unnecessary evaluations.
+- Comparison of evaluated and pruned leaf nodes.
+
+**Implementation:** [`src/game_playing_search/minimax_alpha_beta/`](src/game_playing_search/minimax_alpha_beta/)
+
+**Documentation:** [`Minimax and Alpha-Beta README`](src/game_playing_search/minimax_alpha_beta/README.md)
+
+**Practical Report:** [`Game Playing Search Report`](reports/Game_playing_search_report.pdf)
+
+## Project Structure
+
+```text
+intelligent-systems-algorithms/
+│
+├── src/
+│   ├── constraint_satisfaction/
+│   │   └── map_coloring/
+│   │       ├── backtracking.cpp
+│   │       └── README.md
+│   │
+│   └── game_playing_search/
+│       └── minimax_alpha_beta/
+│           ├── minimax_alpha_beta.cpp
+│           └── README.md
+│
+├── examples/
+│   ├── map_coloring/
+│   │   └── sample_input.txt
+│   │
+│   └── game_playing_search/
+│       └── minimax_alpha_beta/
+│           ├── sample_input.txt
+│           └── sample_output.txt
+│
+├── reports/
+│   └── Game_playing_search_report.pdf
+│
+├── CMakeLists.txt
+├── .gitignore
+└── README.md
+```
+
+## Technologies
+
+- **Language:** C++
+- **Standard:** C++17
+- **Build System:** CMake
+- **Compiler:** GCC / G++
+
+## Getting Started
+
+Clone the repository:
 
 ```bash
-g++ -std=c++17 -Wall -Wextra -pedantic src/constraint_satisfaction/map_coloring/backtracking.cpp -o map_coloring
-./map_coloring < examples/map_coloring/sample_input.txt
+git clone https://github.com/VimukthiUdeshan/intelligent-systems-algorithms.git
+cd intelligent-systems-algorithms
 ```
 
-On Windows PowerShell, after compiling with `-o map_coloring.exe`, use:
+Compile individual implementations using the instructions provided in their respective README files.
 
-```powershell
-Get-Content examples/map_coloring/sample_input.txt | .\map_coloring.exe
-```
-
-### Build with CMake (optional)
+Alternatively, build the project using CMake:
 
 ```bash
 cmake -S . -B build
 cmake --build build
 ```
 
-The executable will be in the build directory (or a configuration subdirectory such as `build/Debug` on some Windows generators).
+## Future Improvements
 
-### Example output
+This repository will continue to grow with implementations of additional Artificial Intelligence concepts and algorithms.
 
-```text
-YES
-1 Yellow
-2 Red
-3 Yellow
-4 Red
-5 Green
-6 Yellow
-7 Green
-8 Red
-9 Yellow
-10 Red
-```
+Potential additions include:
 
-The solver returns `NO` if no valid coloring with the four colors exists.
-
-## Project structure
-
-```text
-src/constraint_satisfaction/map_coloring/backtracking.cpp  # CSP solver
-examples/map_coloring/sample_input.txt                      # Example graph
-CMakeLists.txt                                               # Optional CMake build
-.gitignore                                                   # Ignore generated files
-README.md                                                    # Project documentation
-```
-
-## Future improvements
-
-- Minimum Remaining Values (MRV) variable selection
-- Degree heuristic and Least Constraining Value (LCV) ordering
-- Forward checking
-- Automated tests for valid, invalid, and unsatisfiable graphs
-- Search algorithms such as BFS, DFS, and A*
-- Benchmarks comparing naive and improved solvers
+- **Search Algorithms:** Breadth-First Search (BFS), Depth-First Search (DFS), and A* Search.
+- **Constraint Satisfaction:** Minimum Remaining Values (MRV), Degree Heuristic, Least Constraining Value (LCV), and Forward Checking.
+- **Game Playing:** Additional adversarial search strategies and game tree optimizations.
+- **Performance Analysis:** Benchmarking and comparing different algorithmic approaches.
 
 ## Motivation
 
-This project is an independent learning collection inspired by concepts studied in Intelligent Systems. It is organized as a growing algorithm portfolio rather than a collection of lab submissions.
+This project serves as an independent learning and implementation portfolio inspired by concepts studied in Intelligent Systems. Its goal is to build a practical understanding of Artificial Intelligence algorithms through clear implementations, experimentation, and continuous improvement.
+
+---
+
+*Exploring intelligent problem-solving, one algorithm at a time.*
