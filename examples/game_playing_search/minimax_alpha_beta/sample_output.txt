@@ -1,0 +1,5 @@
+Minimax Value: 4
+Alpha-Beta Value: 4
+Best Move: 1
+Leaf Nodes Evaluated: 3
+Leaf Nodes Pruned: 1
