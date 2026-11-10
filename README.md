@@ -42,7 +42,7 @@ Adversarial search algorithms used in two-player, zero-sum games. The implementa
 
 **Documentation:** [`Minimax and Alpha-Beta README`](src/game_playing_search/minimax_alpha_beta/README.md)
 
-**Practical Report:** [`Game Playing Search Report`](reports/Game_playing_search_report.pdf)
+**Practical Report:** [`Game Playing Search Report`](reports/game_playing_search_report.pdf)
 
 ## Project Structure
 
