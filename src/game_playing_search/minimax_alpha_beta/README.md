@@ -90,4 +90,4 @@ On Windows:
 
 ## Related Report
 
-See [`game_playing_search_report.pdf`](../../../../reports/game_playing_search_report.pdf) for the accompanying practical report.
+See [`game_playing_search_report.pdf`](../../../reports/game_playing_search_report.pdf) for the accompanying practical report.
